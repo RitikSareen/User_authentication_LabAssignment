@@ -1,0 +1,26 @@
+<div id="<%= dom_id project %>">
+  <p>
+    <strong>Name:</strong>
+    <%= project.name %>
+  </p>
+
+  <p>
+    <strong>Url:</strong>
+    <%= project.url %>
+  </p>
+
+  <p>
+    <strong>Students:</strong> 
+    <% project.students.each do |student| %>
+      <%= print student.name %>
+    <% end %>
+  </p>
+
+  <p> 
+    <strong>Students: </strong>
+    <%= project.students.map{|student| student.name}.join(',') %>
+    <strong> Total (
+    <%= project.students.size %> )
+    </strong> 
+  </p>
+</div>
